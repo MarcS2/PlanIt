@@ -6,7 +6,6 @@ import { ProjectSchema } from "../models/Project";
 class DbContext {
   Values = mongoose.model('Value', ValueSchema);
   Account = mongoose.model('Account', AccountSchema);
-  Project = mongoose.model('Project', ProjectSchema)
 }
 
 export const dbContext = new DbContext()
