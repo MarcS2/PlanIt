@@ -48,9 +48,8 @@ export class ProjectsController extends BaseController {
 
   async destroyProject(req, res, next) {
     try {
-      const userId = req.userInfo.id
       const projectId = req.params.projectId
-      const message = await projectsService.destroyProject(projectId, userId)
+      const message = await projectsService.destroyProject(projectId)
       return res.send(message)
     } catch (error) {
       next(error)

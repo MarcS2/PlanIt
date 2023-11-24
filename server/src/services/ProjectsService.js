@@ -1,5 +1,5 @@
 import { dbContext } from "../db/DbContext.js"
-import { BadRequest } from "../utils/Errors.js"
+import { BadRequest, Forbidden } from "../utils/Errors.js"
 
 class ProjectsService {
   async getUserProjects(creatorId) {
@@ -21,7 +21,7 @@ class ProjectsService {
   }
 
 
-  async destroyProject(projectId, userId) {
+  async destroyProject(projectId) {
     const project = await this.getProjectById(projectId)
     await project.remove()
     return 'Your project has been destroyed'
